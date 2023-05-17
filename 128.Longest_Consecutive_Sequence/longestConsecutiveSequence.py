@@ -1,3 +1,11 @@
+"""
+my solution is only O(nlogn), but we can do better.
+
+Optimal solution:
+https://www.youtube.com/watch?v=P6RZZMu_maU&ab_channel=NeetCode
+
+"""
+
 class Solution(object):
   def longestConsecutive(self, nums):
     """
