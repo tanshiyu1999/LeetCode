@@ -1,3 +1,7 @@
+"""
+My answer might be non-standard, as the actual answer uses 2 pointers in order to make the time complexity O(2N)
+"""
+
 import re
 class Solution(object):
   def isPalindrome(self, s):
