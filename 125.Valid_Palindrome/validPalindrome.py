@@ -9,8 +9,6 @@ class Solution(object):
     :type s: str
     :rtype: bool
     """
-
-
     newS = re.sub(r'[\W_]', '', s).lower()
     reversedNewS = newS[::-1]
     return newS == reversedNewS

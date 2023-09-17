@@ -4,39 +4,20 @@ class Solution(object):
     :type height: List[int]
     :rtype: int
     """
-    w = len(height)
-    l = height[0]
-    r = height[-1]
-    h = min(height[r], height[l])
-
-
-    currRight = len(height) - 1
-    currLeft = 0
-    currWidth = len(height)
-
-    while currWidth != 0:
-      currWidth-=1
-      if currRight == currLeft:
-        break
-      if currRight > currLeft:
-        currRight-=1
-        if height[currRight] - h > w - currWidth:
-          r = currRight
-          h = min(height[r], height[l])
-          w = r - l
+    l, r = 0, len(height) - 1
+    res = 0
+    while l < r:
+      distance = r - l 
+      shortest = min(height[l], height[r])
+      area = distance * shortest  
+      res = max(res, area)
+      if height[l] <= height[r]:
+        l += 1
       else:
-        left+=1
-        if (height[currLeft] - h) > w - currWidth:
-          l = currLeft
-          h = min(height[r], height[l])
-          w = r - l
-
+        r -= 1
     
-    print("width: ", w)
-    print("height: ", h)
-    return w * h
-
-      
+    return res
+        
 
 s = Solution()
 print(s.maxArea([1,8,6,2,5,4,8,3,7]))
